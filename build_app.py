@@ -541,7 +541,7 @@ js = "\n".join([
   f"const CAT_MAP = {json.dumps(CAT_MAP)};",
   f"const SPONSORS = {json.dumps(sponsors, ensure_ascii=False)};",
   f"const PEOPLE = {json.dumps(people, ensure_ascii=False)};",
-  f"const PROJECTS = {json.dumps(PROJECTS, ensure_ascii=False)};",
+  f"const PROJECTS = {json.dumps(sorted(PROJECTS, key=lambda p: p['name'].lower()), ensure_ascii=False)};",
   JS_BODY,
 ])
 open("output/x402-eco-site/app.js", "w").write(js)
