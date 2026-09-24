@@ -138,6 +138,8 @@ people = [
    "img":"","tweet":""},
   {"name":"Todd Chapman","handle":"TtheBC01","org":"Dev @1shotapi @1shotpay",
    "img":"logos/people/tthebc01.jpg","tweet":"https://x.com/TtheBC01/status/2019987853883895867"},
+  {"name":"Wayne","handle":"Crypto_Wayne97","org":"Dev @craagentarc",
+   "img":"logos/people/crypto_wayne97.jpg","tweet":""},
   {"name":"Shafu","handle":"shafu0x","org":"Dev @Circle",
    "img":"logos/people/shafu0x.jpg","tweet":"https://x.com/shafu0x/status/2020522151619580392"},
   {"name":"Solking","handle":"Solkingchad","org":"Growth @Oobeonsol",
