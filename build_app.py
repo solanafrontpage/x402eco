@@ -63,15 +63,6 @@ sponsors = [
     "facts": [["Builder", "Coinbase"], ["Tech", "OP Stack L2"], ["x402 role", "Origin & top network"], ["On-ramps", "Fiat native"]],
   },
   {
-    "id": "robinhood", "name": "Robinhood Chain", "site": "https://robinhood.com", "role": "Settlement Layer",
-    "wiki": [
-      "Robinhood Chain is a permissionless Ethereum Layer-2 built on Arbitrum Orbit technology, operated by Robinhood Markets and designed to bring real-world assets on-chain. It launched public testnet in February 2026 and public mainnet on July 1, 2026, with ~100ms block times and ETH as native gas.",
-      "The chain connects Robinhood's 23 million brokerage users to on-chain finance through native brokerage integration, self-custodial wallets, and fee abstraction — one of the largest regulated retail distribution channels in existence.",
-      "In the x402 economy, Robinhood Chain extends agentic payments to mainstream retail rails: tokenized stocks and RWAs become machine-purchasable services, and x402-gated APIs can settle on an L2 purpose-built for high-frequency, low-cost commerce."
-    ],
-    "facts": [["Builder", "Robinhood Markets"], ["Tech", "Arbitrum Orbit L2"], ["Mainnet", "July 1, 2026"], ["Block time", "~100ms"]],
-  },
-  {
     "id": "aibtc", "name": "AIBTC", "site": "https://aibtc.com", "role": "Bitcoin Agent Infrastructure",
     "wiki": [
       "AIBTC is the first network for personal agents on Bitcoin — a DAO framework and toolchain that lets AI agents hold assets, execute contracts, and coordinate autonomously on Stacks (anchored to Bitcoin finality).",
@@ -88,15 +79,6 @@ sponsors = [
       "Its GTM thesis for x402 emphasizes sovereignty — any agent economy can launch its own execution environment with Celestia DA underneath, avoiding congestion and centralized sequencers."
     ],
     "facts": [["Type", "Modular DA layer"], ["Tech", "Data availability sampling"], ["x402 role", "Scale-out settlement infra"]],
-  },
-  {
-    "id": "arc", "name": "Arc.io", "site": "https://arc.io", "role": "Agent Payments Infrastructure",
-    "wiki": [
-      "Arc builds infrastructure for the agentic web — identity, payments, and permissions for software that acts on its own behalf.",
-      "Within the x402 stack, Arc focuses on the trust and routing layer: giving agents verifiable identity and policy guardrails so autonomous payment decisions remain auditable and bounded.",
-      "As x402 volume grows, middleware like Arc becomes the compliance and safety fabric that lets enterprises expose x402-gated services to agent traffic with confidence."
-    ],
-    "facts": [["Focus", "Agent identity & policy"], ["Layer", "Middleware"], ["x402 role", "Trust & routing"]],
   },
   {
     "id": "1shotapi", "name": "1Shot API", "site": "https://1shotapi.com", "role": "On-chain Automation",
@@ -130,8 +112,8 @@ sponsors = [
 
 # X handles for backers (icon links in wiki cards)
 SPONSOR_X = {
-  "solana": "solana", "base": "base", "robinhood": "RobinhoodChain", "aibtc": "aibtcdev",
-  "celestia": "celestiaorg", "arc": "arc", "1shotapi": "1ShotAPI", "pinata": "pinata",
+  "solana": "solana", "base": "base", "aibtc": "aibtcdev",
+  "celestia": "celestiaorg", "1shotapi": "1ShotAPI", "pinata": "pinata",
   "indexter": "IndexterCash",
 }
 for _s in sponsors:
@@ -227,6 +209,8 @@ PROJECTS = [
    "desc":"The Orbit stack powering Robinhood Chain — the technology layer beneath its x402-capable settlement rails."},
   {"id":"interzoid","name":"Interzoid","chain":"Robinhood","url":"https://api.interzoid.com",
    "desc":"Data-quality and enrichment APIs with x402 per-call pricing — an early adopter of machine-payable data services."},
+  {"id":"craagent","name":"CRA Agent","chain":"Arc","url":"https://cra-agent.tech",
+   "desc":"Agent payment rail on Arc — one tool call quotes the x402 price, checks spend policy, verifies the seller via ERC-8004, and pays gas-free USDC through Circle Gateway with a written receipt."},
   {"id":"arc","name":"Arc.io","chain":"Arc","url":"https://arc.io",
    "desc":"Agent identity, payments, and policy guardrails — the trust and routing layer for autonomous x402 payment decisions."},
   {"id":"1shotapi","name":"1Shot API","chain":"Arc","url":"https://1shotapi.com",
