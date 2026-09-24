@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>x402.eco — The x402 Ecosystem Hub</title>
+<meta name="description" content="The definitive ecosystem site for x402 — the HTTP-native payment standard for AI agents. Live service index powered by Indexter.cash.">
+<link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+<style>
+:root{
+  --accent:#c0f000; --accent2:#8fdc00; --accent-dim:rgba(192,240,0,.13); --accent-border:rgba(192,240,0,.38);
+  --glow:0 0 60px rgba(192,240,0,.10);
+}
+html[data-theme="dark"]{
+  --bg:#050705; --bg2:#0a0d08; --panel:#0d110b; --panel2:#12170e;
+  --line:#1b2314; --line2:#2a3520;
+  --text:#eef4e4; --sub:#9aa88c; --dim:#5f6b52;
+  --chipbg:#131a0e; --chiptext:#c9e08a;
+  --card-grad:linear-gradient(180deg,#10150c 0%,#0b0f08 100%);
+  --nav-bg:rgba(5,7,5,.82);
+}
+html[data-theme="light"]{
+  --bg:#f5f8ee; --bg2:#edf2e2; --panel:#ffffff; --panel2:#f3f6ea;
+  --line:#dfe6d0; --line2:#c6d0b2;
+  --text:#141b0c; --sub:#57644c; --dim:#8b9680;
+  --chipbg:#e9f0d8; --chiptext:#3c4d16;
+  --card-grad:linear-gradient(180deg,#ffffff 0%,#f7faef 100%);
+  --nav-bg:rgba(245,248,238,.85);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{padding-bottom:110px;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.55;overflow-x:hidden;transition:background .25s,color .25s}
+/* film-grain texture */
+body::after{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.028;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+::selection{background:var(--accent);color:#0a0d04}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--line2);border-radius:5px}
+.mono{font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace}
+a{color:inherit;text-decoration:none}
+.container{max-width:1220px;margin:0 auto;padding:0 24px}
+.accent{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:800;letter-spacing:-.4px}
+.logo img{width:30px;height:30px;border-radius:8px;box-shadow:0 0 14px var(--accent-dim)}
+.logo .eco{color:var(--sub);font-weight:600}
+.nav-links{display:flex;gap:22px;font-size:13.5px;color:var(--sub)}
+.nav-links a{position:relative;padding:4px 0}
+.nav-links a:hover{color:var(--text)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--accent);border-radius:1px;transition:width .2s}
+.nav-links a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:10px}
+.theme-btn{background:var(--panel);border:1px solid var(--line2);border-radius:9px;width:36px;height:36px;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;color:var(--text);transition:.2s}
+.theme-btn:hover{border-color:var(--accent-border);transform:rotate(20deg)}
+.nav-cta{background:var(--accent);color:#0a0d04;font-weight:700;font-size:13px;padding:8px 16px;border-radius:9px;transition:.2s}
+.nav-cta:hover{box-shadow:0 0 24px rgba(192,240,0,.35);transform:translateY(-1px)}
+
+/* HERO */
+.hero{padding:84px 0 52px;text-align:center;position:relative}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(720px 340px at 50% -6%,var(--accent-dim),transparent 70%),
+             radial-gradient(500px 260px at 82% 8%,rgba(143,220,0,.06),transparent 70%)}
+.hero .avatar{width:88px;height:88px;border-radius:24px;border:2px solid var(--accent-border);box-shadow:var(--glow),0 8px 40px rgba(0,0,0,.4)}
+.hero h1{font-size:clamp(40px,6.2vw,68px);font-weight:800;letter-spacing:-2.4px;line-height:1.04;margin-top:14px}
+.hero h1 .grad{color:var(--accent);text-shadow:0 0 40px rgba(192,240,0,.25)}
+.hero p.lead{max-width:680px;margin:20px auto 0;color:var(--sub);font-size:17px}
+.hero .badges{display:flex;gap:10px;justify-content:center;margin-top:26px;flex-wrap:wrap}
+.badge{font-size:12px;padding:6px 14px;border-radius:999px;border:1px solid var(--line2);color:var(--sub);background:var(--panel)}
+.badge.live{border-color:var(--accent-border);color:var(--accent)}
+.badge .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);margin-right:6px;animation:pulse 1.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
+.stat{background:var(--card-grad);border:1px solid var(--line);border-radius:16px;padding:22px;text-align:left;position:relative;overflow:hidden;transition:.25s}
+.stat::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.5}
+.stat:hover{border-color:var(--accent-border);transform:translateY(-2px)}
+.stat .v{font-size:32px;font-weight:800;letter-spacing:-1px;color:var(--accent)}
+.stat .l{font-size:12.5px;color:var(--text);margin-top:4px;font-weight:600}
+.stat .src{font-size:10.5px;color:var(--dim);margin-top:8px}
+
+/* SECTION */
+.section{padding:64px 0}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent)}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:26px;flex-wrap:wrap;gap:10px}
+.sec-head h2{font-size:28px;font-weight:800;letter-spacing:-.7px;margin-top:6px}
+.sec-head .note{font-size:12.5px;color:var(--sub);padding-bottom:4px}
+
+/* BACKED */
+.backed-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.backed-card{background:var(--card-grad);border:1px solid var(--line);border-radius:16px;padding:24px 16px;display:flex;flex-direction:column;align-items:center;gap:12px;transition:.25s;cursor:pointer;position:relative;overflow:hidden;font:inherit;color:inherit}
+.backed-card .chev{position:absolute;top:12px;right:12px;font-size:11px;color:var(--dim);transition:.25s}
+.backed-card.open{border-color:var(--accent-border)}
+.backed-card.open .chev{transform:rotate(180deg);color:var(--accent)}
+.backed-card::before{content:"";position:absolute;inset:0;background:radial-gradient(160px 60px at 50% 0%,var(--accent-dim),transparent);opacity:0;transition:.25s}
+.backed-card:hover{border-color:var(--accent-border);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.backed-card:hover::before{opacity:1}
+.backed-card img{width:46px;height:46px;border-radius:11px;object-fit:contain;position:relative}
+html[data-theme="light"] .backed-card img{background:#fff}
+.backed-card .nm{font-weight:700;font-size:14px;position:relative}
+.backed-card .rl{font-size:10.5px;color:var(--dim);position:relative;text-align:center}
+
+/* WIKI */
+.wiki-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.wiki-card{background:var(--card-grad);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.25s}
+.wiki-card:hover{border-color:var(--accent-border);box-shadow:0 10px 36px rgba(0,0,0,.3)}
+.wiki-head{display:flex;align-items:center;gap:14px;padding:18px 22px;border-bottom:1px solid var(--line);background:var(--panel2)}
+.wiki-head img{width:40px;height:40px;border-radius:10px;object-fit:contain}
+html[data-theme="light"] .wiki-head img{background:#fff}
+.wiki-head .t{font-size:16px;font-weight:800}
+.wiki-head .s{font-size:11.5px;color:var(--sub)}
+.wiki-icons{margin-left:auto;display:flex;gap:8px}
+.icon-link{width:32px;height:32px;border-radius:9px;border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;color:var(--sub);transition:.2s}
+.icon-link:hover{color:var(--accent);border-color:var(--accent-border);background:var(--accent-dim);transform:translateY(-2px)}
+.icon-link svg{width:15px;height:15px;fill:currentColor}
+.wiki-body{padding:20px 22px;font-size:13.5px;color:var(--sub)}
+.wiki-body p{margin-bottom:12px}
+.wiki-facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.fact{font-size:11px;padding:5px 11px;border-radius:7px;background:var(--chipbg);border:1px solid var(--line);color:var(--chiptext)}
+.fact b{color:var(--accent)}
+
+/* PROJECTS */
+.chain-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.proj{background:var(--card-grad);border:1px solid var(--line);border-radius:16px;padding:20px;transition:.25s;display:flex;flex-direction:column;gap:12px}
+.proj:hover{border-color:var(--accent-border);transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.proj .top{display:flex;align-items:center;gap:12px}
+.proj img{width:40px;height:40px;border-radius:10px;object-fit:contain;background:#fff;padding:2px;flex-shrink:0}
+.proj .nm{font-weight:800;font-size:14.5px}
+.proj .chain{font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--chipbg);color:var(--chiptext);border:1px solid var(--line);margin-left:auto;white-space:nowrap}
+.proj .desc{font-size:12.5px;color:var(--sub);flex:1}
+.proj a.visit{font-size:12px;font-weight:700;color:var(--accent);align-self:flex-start}
+.proj a.visit:hover{text-decoration:underline}
+
+/* PEOPLE */
+.controls{display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap}
+.search-box{flex:1;min-width:240px;max-width:440px;display:flex;align-items:center;background:var(--panel);border:1px solid var(--line2);border-radius:11px;padding:0 14px;transition:.2s}
+.search-box:focus-within{border-color:var(--accent-border);box-shadow:0 0 0 3px var(--accent-dim)}
+.search-box input{flex:1;background:none;border:none;outline:none;color:var(--text);font-size:14px;padding:11px 0}
+.search-box .ic{color:var(--dim)}
+.shuffle-btn{background:var(--panel);border:1px solid var(--line2);border-radius:11px;padding:0 18px;cursor:pointer;color:var(--text);font-size:13px;font-weight:600;transition:.2s;display:flex;align-items:center;gap:8px}
+.shuffle-btn:hover{border-color:var(--accent-border);color:var(--accent)}
+.people-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.person{background:var(--card-grad);border:1px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;transition:.25s}
+.person:hover{border-color:var(--accent-border);transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.person img,.person .fallback{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--accent-border);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;color:#0a0d04;background:var(--accent)}
+.person .nm{font-weight:800;font-size:14px}
+.person .org{font-size:11px;color:var(--accent);font-weight:600;margin-top:2px}
+.person .org{font-size:11px;color:var(--sub);margin-top:8px;min-height:48px;line-height:1.45}
+.plinks{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.tweetlink{display:inline-flex;align-items:center;font-size:11.5px;font-weight:700;color:var(--text);border:1px solid var(--line2);border-radius:8px;padding:6px 13px;transition:.2s}
+.tweetlink:hover{border-color:var(--accent-border);color:var(--accent);background:var(--accent-dim)}
+.person a.xlink{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:11.5px;font-weight:700;color:var(--accent);border:1px solid var(--accent-border);border-radius:8px;padding:6px 13px;transition:.2s}
+.person a.xlink:hover{background:var(--accent-dim)}
+.person a.xlink svg{width:11px;height:11px;fill:currentColor}
+.no-results{color:var(--dim);font-size:13px;padding:20px 0}
+
+/* SERVICES */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.chip{font-size:12px;padding:7px 14px;border-radius:999px;border:1px solid var(--line2);color:var(--sub);cursor:pointer;background:var(--panel);transition:.15s}
+.chip:hover{color:var(--text);border-color:var(--accent-border)}
+.chip.on{background:var(--accent);color:#0a0d04;font-weight:700;border-color:transparent}
+.svc-count{font-size:12.5px;color:var(--sub);margin-bottom:14px}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.svc{background:var(--card-grad);border:1px solid var(--line);border-radius:14px;padding:16px;transition:.15s;display:flex;gap:12px}
+.svc:hover{border-color:var(--accent-border);transform:translateY(-2px)}
+.svc .logo{width:36px;height:36px;border-radius:9px;flex-shrink:0;object-fit:contain;background:#fff;padding:3px}
+.svc .body{min-width:0}
+.svc .top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.svc .nm{font-weight:700;font-size:13.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.svc .cat{font-size:10px;padding:3px 8px;border-radius:6px;background:var(--chipbg);color:var(--chiptext);white-space:nowrap}
+.svc .sum{font-size:12px;color:var(--sub);margin-top:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.svc .meta{display:flex;gap:10px;margin-top:10px;font-size:10.5px;color:var(--dim);flex-wrap:wrap}
+.svc .meta .net{color:var(--accent)}
+.svc .meta a{color:var(--accent);font-weight:600}
+
+/* NETWORKS */
+.net-bars{display:flex;flex-direction:column;gap:12px}
+.net-row{display:flex;align-items:center;gap:14px;font-size:12.5px}
+.net-row .nm{width:150px;color:var(--sub)}
+.net-row .bar{flex:1;height:10px;background:var(--bg2);border-radius:5px;overflow:hidden}
+.net-row .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent));border-radius:5px}
+.net-row .ct{width:44px;text-align:right;color:var(--text);font-weight:700}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+
+footer{border-top:1px solid var(--line);padding:14px 0;margin-top:44px;position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--bg);box-shadow:0 -6px 18px rgba(0,0,0,.12)}
+.foot-inner{display:flex;justify-content:center;align-items:center;gap:16px;font-size:12.5px;color:var(--sub);max-width:760px;margin:0 auto}
+.foot-inner a{color:var(--accent)}
+.foot-x{display:flex;align-items:center;gap:8px}
+.foot-x img{width:22px;height:22px;border-radius:6px}
+
+@media(max-width:960px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .backed-grid{grid-template-columns:repeat(3,1fr)}
+  .people-grid{grid-template-columns:repeat(2,1fr)}
+  .wiki-grid,.proj-grid,.svc-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+
+/* CONVEYOR BELT PEOPLE */
+.belt{overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.belt-track{display:flex;gap:14px;width:max-content;animation:belt-scroll 60s linear infinite}
+.belt:hover .belt-track{animation-play-state:paused}
+@keyframes belt-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.person{flex:0 0 250px}
+
+/* CLICKABLE STATS */
+button.stat{font:inherit;color:inherit;cursor:pointer;text-align:left}
+.stat .chev{position:absolute;top:18px;right:18px;font-size:12px;color:var(--dim);transition:.25s}
+.stat.open .chev{transform:rotate(180deg);color:var(--accent)}
+.stat-panel{margin-top:14px;background:var(--card-grad);border:1px solid var(--line2);border-radius:16px;padding:20px 22px;animation:panelIn .25s ease}
+@keyframes panelIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.stat-panel h4{margin:0 0 12px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.stat-panel .rows{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px 22px}
+.stat-panel .prow{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12.5px;padding:5px 0;border-bottom:1px dashed var(--line)}
+.stat-panel .prow .n{color:var(--sub);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.stat-panel .prow .c{color:var(--accent);font-weight:700}
+.stat-panel .close{margin-top:14px;font-size:11.5px;color:var(--dim);cursor:pointer}
+.stat-panel .close:hover{color:var(--accent)}
+
+.chainlogo{width:18px;height:18px;border-radius:50%;object-fit:contain;background:#fff;padding:1px;vertical-align:middle;margin-right:4px;border:1px solid var(--line2)}
+.chaintext{font-size:10.5px;color:var(--accent);margin-right:6px}
+.logo-pad{background:#fff !important;padding:4px !important;border:1px solid var(--line2)}
+.x402org-link svg{height:15px;width:auto;display:block}
+.x402org-link{opacity:.9;transition:.2s;color:var(--sub) !important}
+.x402org-link:hover{opacity:1}
+</style>
+</head><body>
+
+<nav>
+  <div class="container nav-inner">
+    <div class="logo"><span>x402<span class="eco">.eco</span></span></div>
+    <div class="nav-links">
+      <a href="#backed">Sponsors</a>
+      <a href="#projects">Projects</a>
+      <a href="#people">People</a>
+      <a href="#services">Live Services</a>
+      
+    </div>
+    <div class="nav-right">
+      <button class="theme-btn" id="theme-btn" title="Toggle dark / light">◐</button>
+      <a class="nav-cta" href="https://x.com/x402eco" target="_blank" rel="noopener" title="@x402eco on X" aria-label="@x402eco on X" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;padding:0"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-label="X"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <img class="avatar" src="logos/x402eco.png" alt="x402.eco">
+    <div class="eyebrow">The Agentic Payment Standard</div>
+    <h1>The Economy of <span class="grad">x402</span></h1>
+    <p class="lead">One HTTP header. Any machine can pay any other machine. This is the ecosystem hub for x402, the HTTP-native payment standard powering autonomous AI agent commerce.</p>
+    <div class="badges">
+    </div>
+
+    <div class="stats">
+      <button class="stat clickable" data-panel="services"><div class="v" id="st-services">—</div><div class="l">Live x402 services indexed</div><span class="chev">▾</span></button>
+      <button class="stat clickable" data-panel="providers"><div class="v" id="st-providers">—</div><div class="l">Service providers</div><span class="chev">▾</span></button>
+      <button class="stat clickable" data-panel="networks"><div class="v" id="st-networks">—</div><div class="l">Settlement networks</div><span class="chev">▾</span></button>
+    </div>
+    <div class="stat-panel" id="stat-panel" hidden></div>
+  </div>
+</header>
+
+<section class="section" id="backed">
+  <div class="container">
+    <div class="sec-head"><div class="eyebrow">Ecosystem Sponsors</div></div>
+    <div class="backed-grid" id="sponsor-grid"></div>
+    <div class="stat-panel" id="sponsor-panel" hidden></div>
+  </div>
+</section>
+
+<section class="section" id="people">
+  <div class="container">
+    <div class="sec-head"><div><div class="eyebrow">The Builders</div><h2>Key People in x402</h2></div></div>
+    <div class="controls">
+      <div class="search-box"><span class="ic">⌕</span><input id="people-search" type="text" placeholder="Search people, companies, roles…"></div>
+    </div>
+    <div class="belt" id="people-belt">
+      <div class="belt-track" id="belt-track"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects" style="padding-top:24px">
+  <div class="container">
+    <div class="sec-head"><div><div class="eyebrow">Building Now</div><h2>Projects by Chain</h2></div><span class="note">Teams shipping on x402 across ecosystems</span></div>
+    <div class="chain-tabs" id="chain-tabs"></div>
+    <div class="proj-grid" id="proj-grid"></div>
+  </div>
+</section>
+
+</section>
+
+<section class="section" id="services" style="padding-top:24px">
+  <div class="container">
+    <div class="sec-head"><div><h2>Live x402 Services</h2></div></div>
+    <div class="controls">
+      <div class="search-box"><span class="ic">⌕</span><input id="svc-search" type="text" placeholder="Search 179 services…"></div>
+    </div>
+    <div class="filters" id="filters"></div>
+    <div class="svc-count" id="svc-count"></div>
+    <div class="svc-grid" id="svc-grid"></div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="container foot-inner">
+    <div class="foot-std"><a class="x402org-link" href="https://www.x402.org" target="_blank" rel="noopener" title="x402.org — the x402 standard" aria-label="x402.org" style="display:inline-flex;align-items:center;vertical-align:middle"><svg fill="currentColor" id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 486.3 187.4">
+  <!-- Generator: Adobe Illustrator 30.5.1, SVG Export Plug-In . SVG Version: 2.1.4 Build 3)  -->
+  <path fill="currentColor" d="M10.5,59.5c.6-.6,1.6-.6,2.3,0l50.9,50.9,19.5-19.5c.6-.6,1.6-.6,2.3,0l10,10c.6.6.6,1.7,0,2.3l-14.4,14.4v10.4l45.8,45.8c.6.6.6,1.7,0,2.3l-10,10c-.6.6-1.6.6-2.3,0l-50.9-50.9-50.9,50.9c-.6.6-1.6.6-2.3,0L.5,176.1c-.6-.6-.6-1.7,0-2.3l45.8-45.8v-10.4L.5,71.8c-.6-.6-.6-1.7,0-2.3l10-10Z"/>
+  <path fill="currentColor" d="M374.1,151.7c0-2.5,1-4.9,2.7-6.7l91-93.6c.4-.5.7-1.1.7-1.7v-7.4c0-.6-.2-1.2-.7-1.7l-18.9-19.9c-.4-.5-1.1-.7-1.7-.7h-37.9c-.6,0-1.3.3-1.7.7l-22.9,23c-.9.9-2.5.9-3.4,0l-9.1-9.1c-.9-.9-.9-2.5,0-3.4l26-26c1.8-1.8,4.3-2.8,6.8-2.8h46.7c2.6,0,5.2,1.1,7,3l24.9,26.1c1.7,1.8,2.7,4.2,2.7,6.7v15.9c0,2.5-1,4.9-2.7,6.7l-91,93.6c-.4.5-.7,1.1-.7,1.7v11.4c0,1.3,1.1,2.4,2.4,2.4h89.6c1.3,0,2.4,1.1,2.4,2.4v12.9c0,1.3-1.1,2.4-2.4,2.4h-100.1c-5.3,0-9.7-4.3-9.7-9.7v-26.1Z"/>
+  <path fill="currentColor" d="M317.9,2.2c17.8,0,32.2,14.4,32.2,32.2v121.6c-.4,17.1-14.2,30.9-31.3,31.4h-41.2c-17.1-.4-30.9-14.2-31.3-31.4v-.8s0-120.8,0-120.8c0-17.8,14.4-32.2,32.2-32.2h39.5ZM263.8,144.8v10.5c0,8,6.5,14.5,14.5,14.5h39.5c8,0,14.5-6.5,14.5-14.5v-79l-68.5,68.6ZM278.3,19.9c-8,0-14.5,6.5-14.5,14.5v85.3l68.5-68.6v-16.7c0-8-6.5-14.5-14.5-14.5h-39.5Z"/>
+  <path fill="currentColor" d="M199.3,0c1.3,0,2.4,1.1,2.4,2.4v78.6c0,1.3,1.1,2.4,2.4,2.4h17.3c1.3,0,2.4,1.1,2.4,2.4v12.9c0,1.3-1.1,2.4-2.4,2.4h-17.3c-1.3,0-2.4,1.1-2.4,2.4v81.5c0,1.3-1.1,2.4-2.4,2.4h-12.9c-1.3,0-2.4-1.1-2.4-2.4v-81.5c0-1.3-1.1-2.4-2.4-2.4h-60.8c-.6,0-1.3-.3-1.7-.7l-21-21c-.9-.9-.9-2.5,0-3.4L172.9.7c.5-.5,1.1-.7,1.7-.7h24.7ZM123,76c-.9.9-.9,2.5,0,3.4l3.3,3.3c.5.5,1.1.7,1.7.7h53.5c1.3,0,2.4-1.1,2.4-2.4V19.9c0-1.2-1-2.2-2.2-2.2s-1.1.2-1.5.6l-57.3,57.6Z"/>
+  <metadata>
+    <sfw xmlns="http://ns.adobe.com/SaveForWeb/1.0/">
+      <slices/>
+      <sliceSourceBounds x="346" y="322.45" width="486.25" height="187.43" bottomLeftOrigin="true"/>
+    </sfw>
+  </metadata>
+</svg></a></div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+
+<div class="tweet-modal" id="tweet-modal" hidden>
+  <div class="tweet-modal-backdrop" onclick="closeTweet()"></div>
+  <div class="tweet-modal-card">
+    <button class="tweet-modal-close" onclick="closeTweet()">✕</button>
+    <div id="tweet-embed-host"></div>
+  </div>
+</div>
+<script>
+let _widgetsLoaded = false;
+function loadWidgets(cb){
+  if (_widgetsLoaded){ cb(); return; }
+  var s = document.createElement("script");
+  s.src = "https://platform.twitter.com/widgets.js";
+  s.charset = "utf-8"; s.async = true;
+  s.onload = function(){ _widgetsLoaded = true; cb(); };
+  s.onerror = function(){ cb(); };
+  document.head.appendChild(s);
+}
+function openTweet(url, handle){
+  var m = document.getElementById("tweet-modal");
+  var host = document.getElementById("tweet-embed-host");
+  host.innerHTML = '<div class="tweet-loading">Loading post…</div>';
+  m.hidden = false;
+  var bq = document.createElement("blockquote");
+  bq.className = "twitter-tweet";
+  bq.dataset.theme = document.documentElement.dataset.theme === "light" ? "light" : "dark";
+  bq.dataset.dnt = "true";
+  var a = document.createElement("a");
+  a.href = url; bq.appendChild(a);
+  host.innerHTML = ""; host.appendChild(bq);
+  loadWidgets(function(){
+    if (window.twttr && window.twttr.widgets){ window.twttr.widgets.load(host); }
+    else { host.innerHTML = '<div class="tweet-loading">Embed unavailable — <a href="'+url+'" target="_blank" rel="noopener">open on X ↗</a></div>'; }
+  });
+}
+function closeTweet(){
+  document.getElementById("tweet-modal").hidden = true;
+  document.getElementById("tweet-embed-host").innerHTML = "";
+}
+document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeTweet(); });
+</script>
+<style>
+.tweet-modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:20px}
+.tweet-modal[hidden]{display:none}
+.tweet-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(4px)}
+.tweet-modal-card{position:relative;width:min(560px,94vw);max-height:82vh;overflow-y:auto;background:var(--panel);border:1px solid var(--line2);border-radius:18px;padding:18px}
+.tweet-modal-close{position:absolute;top:10px;right:12px;background:var(--panel);border:1px solid var(--line2);color:var(--text);border-radius:8px;width:30px;height:30px;cursor:pointer;font-size:13px;z-index:2}
+.tweet-loading{color:var(--sub);font-size:13px;text-align:center;padding:30px 10px}
+.tweet-loading a{color:var(--accent)}
+.tweet-modal-card blockquote.twitter-tweet{margin:0}
+
+.chainlogo{width:18px;height:18px;border-radius:50%;object-fit:contain;background:#fff;padding:1px;vertical-align:middle;margin-right:4px;border:1px solid var(--line2)}
+.chaintext{font-size:10.5px;color:var(--accent);margin-right:6px}
+.logo-pad{background:#fff !important;padding:4px !important;border:1px solid var(--line2)}
+.x402org-link svg{height:15px;width:auto;display:block}
+.x402org-link{opacity:.9;transition:.2s;color:var(--sub) !important}
+.x402org-link:hover{opacity:1}
+</style>
+</body>
+</html>
