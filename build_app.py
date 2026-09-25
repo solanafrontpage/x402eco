@@ -99,6 +99,24 @@ sponsors = [
     "facts": [["Focus", "IPFS pinning & gateways"], ["Scale", "Billions of files"], ["x402 role", "Content & metadata layer"]],
   },
   {
+    "id": "aeon", "name": "AEON", "site": "https://aeon.xyz", "role": "Agentic Payment Settlement",
+    "wiki": [
+      "AEON is the settlement layer bridging autonomous AI agent interactions (agent-to-agent and agent-to-merchant) with real-world value flows — an early Coinbase x402 partner that has shipped an x402 Facilitator and SDK on BNB Chain.",
+      "The network connects AI agents to a 50-million-strong merchant base, letting agents complete real consumer tasks — search, compare, book, pay — end to end on x402 and AEON rails, as demonstrated in a public Coinbase Developers hackathon demo.",
+      "Backed by $8M led by YZi Labs, AEON leverages AI-native protocols like x402, ERC-8004, Google AP2, and MCP to make autonomous agent transactions verifiable and settle them against real-world payment networks."
+    ],
+    "facts": [["Focus", "Agent payment settlement"], ["Backers", "$8M · YZi Labs"], ["x402 role", "Facilitator & SDK on BNB Chain"]],
+  },
+  {
+    "id": "zauth", "name": "zauth", "site": "https://zauth.inc", "role": "Agent Security Infrastructure",
+    "wiki": [
+      "zauth is security infrastructure for the agentic internet — its Vector engine drives a real AI agent against your live app (recon, exploit, proof), so every finding is demonstrated on the running target, never guessed from signatures.",
+      "Its Provider Hub runs continuous live checks on every x402 endpoint — schema, price, delivery — feeding a public registry agents can trust before they pay, while RepoScan fingerprints repositories to tell original projects from clones.",
+      "For the x402 economy, zauth is the demand-side trust layer: agents transact only with endpoints proven to do what they claim, and builders catch vulnerabilities before attackers do."
+    ],
+    "facts": [["Focus", "Agent & endpoint security"], ["Products", "Vector · RepoScan · Provider Hub"], ["x402 role", "Endpoint verification"]],
+  },
+  {
     "id": "indexter", "name": "Indexter.cash", "site": "https://indexter.cash", "role": "Data Partner",
     "wiki": [
       "Indexter.cash is the discovery and analytics layer for the x402 ecosystem — indexing every payment-gated service on the network, its advertised price terms, and its supported settlement chains.",
@@ -114,7 +132,7 @@ sponsors = [
 SPONSOR_X = {
   "solana": "solana", "base": "base", "aibtc": "aibtcdev",
   "celestia": "celestiaorg", "1shotapi": "1ShotAPI", "pinata": "pinata",
-  "indexter": "IndexterCash",
+  "aeon": "AEON_Community", "zauth": "zauthinc", "indexter": "IndexterCash",
 }
 for _s in sponsors:
     _s["x"] = SPONSOR_X.get(_s["id"], "")
