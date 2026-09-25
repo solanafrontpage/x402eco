@@ -117,6 +117,24 @@ sponsors = [
     "facts": [["Focus", "Agent & endpoint security"], ["Products", "Vector · RepoScan · Provider Hub"], ["x402 role", "Endpoint verification"]],
   },
   {
+    "id": "heyaura", "name": "heyAura", "site": "https://heyaura.com", "role": "Agentic Wallet Assistant",
+    "wiki": [
+      "heyAura is an AI wallet assistant that lives 24/7 in user wallets — allowing users to send, swap, bridge, and manage decentralized portfolios simply by describing what they want to do in natural language.",
+      "In the x402 economy, heyAura integrates x402 payment settlement via facilitators like PayAI, allowing the AI assistant to autonomously query paid APIs, specialized compute, and external tooling on the user's behalf under clear risk rules.",
+      "With built-in risk protection, automated APY discovery, and native $ADX utility, heyAura turns complex multi-chain DeFi flows into safe, autonomous agent interactions."
+    ],
+    "facts": [["Focus", "Autonomous wallet assistant"], ["Features", "Natural-language swaps · Smart yield"], ["x402 role", "Autonomous tool & API settlement"]],
+  },
+  {
+    "id": "t54", "name": "t54.ai", "site": "https://t54.ai", "role": "Agent Trust & Risk Infrastructure",
+    "wiki": [
+      "t54.ai builds institutional-grade trust and risk infrastructure for the autonomous agent economy, screening over 20M transactions and verifying 41,000+ autonomous agents through its Trustline engine.",
+      "Its open-source x402-Secure SDK and proxy layer add verified identity, reasoning-trace capture, intent validation, and dispute guardrails to every x402 payment flow — including launching the first x402 facilitator on XRPL supporting XRP and RLUSD.",
+      "Through Claw Credit, t54 enables agent-native credit lines underwritten by its risk engine, letting agents pay for compute and x402 services without exposing owner credentials."
+    ],
+    "facts": [["Focus", "Agent trust, KYA & risk engine"], ["Products", "Trustline · x402-Secure · Claw Credit"], ["x402 role", "x402-Secure gateway & XRPL Facilitator"]],
+  },
+  {
     "id": "indexter", "name": "Indexter.cash", "site": "https://indexter.cash", "role": "Data Partner",
     "wiki": [
       "Indexter.cash is the discovery and analytics layer for the x402 ecosystem — indexing every payment-gated service on the network, its advertised price terms, and its supported settlement chains.",
@@ -132,7 +150,8 @@ sponsors = [
 SPONSOR_X = {
   "solana": "solana", "base": "base", "aibtc": "aibtcdev",
   "celestia": "celestiaorg", "1shotapi": "1ShotAPI", "pinata": "pinata",
-  "aeon": "AEON_Community", "zauth": "zauthinc", "indexter": "IndexterCash",
+  "aeon": "AEON_Community", "zauth": "zauthinc",
+  "heyaura": "heyAura", "t54": "t54ai", "indexter": "IndexterCash",
 }
 for _s in sponsors:
     _s["x"] = SPONSOR_X.get(_s["id"], "")
