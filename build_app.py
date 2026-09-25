@@ -81,13 +81,14 @@ sponsors = [
     "facts": [["Type", "Modular DA layer"], ["Tech", "Data availability sampling"], ["x402 role", "Scale-out settlement infra"]],
   },
   {
-    "id": "1shotapi", "name": "1Shot API", "site": "https://1shotapi.com", "role": "On-chain Automation",
+    "id": "1shotapi", "name": "1Shot API", "site": "https://1shotapi.com", "role": "Embedded Wallets & Automation",
     "wiki": [
-      "1Shot API is an onchain automation layer that turns smart contracts into easily callable tools for apps, workflows, and AI-driven systems — with managed wallets, transaction orchestration, and native x402 payment support.",
-      "It lets AI agent developers consume contract functions as fully annotated tools, exposed via MCP or REST, so an agent can execute on-chain actions without hand-writing web3 code. n8n and Make workflows can even be monetized with x402 payments.",
-      "1Shot effectively makes every smart contract an x402-purchasable service — a key supply-side on-ramp for the agentic economy."
+      "1Shot API provides permissionless embedded wallets with 0-fee fiat-to-crypto onramping. Fintechs, exchanges, neobanks, wallets, and AI products can embed self-custodial accounts, abstract gas, delegate transaction authority, and execute onchain activity through one integration. The result? Users get a wallet that feels native to the product while enterprises get fewer critical vendors and a clearer path to production.",
+      "1Shot is built on open standards and permissionless infrastructure. Wallet access remains independent of a proprietary cloud-signing platform. Enterprises retain control of their architecture; users retain control of their accounts.",
+      "Pricing follows successful product usage: 1Shot charges when transactions complete, with no separate licensing, integration, wallet creation, MAU, or signature fees.",
+      "<b>1Shot Embedded Wallet Features:</b><br>• Fully non-custodial<br>• Built-in gas abstraction, transaction batching, and cross-chain transfers<br>• Customizable styling to match your company's brand<br>• Account sessions for agentic applications and x402 payments<br>• OpenID verifiable credentials for portable credential sharing<br>• Unlimited free user accounts"
     ],
-    "facts": [["Focus", "Contracts → agent tools"], ["Supports", "x402, MCP, n8n"], ["x402 role", "Supply-side on-ramp"]],
+    "facts": [["Focus", "Embedded wallets & on-ramp"], ["Pricing", "Pay-on-success · No MAU fees"], ["x402 role", "Agent sessions & payments"]],
   },
   {
     "id": "pinata", "name": "Pinata", "site": "https://pinata.cloud", "role": "IPFS & Content Delivery",
