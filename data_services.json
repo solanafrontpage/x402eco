@@ -2625,5 +2625,101 @@
    "eip155:8453"
   ],
   "priceUsd": 0.18
+ },
+ {
+  "name": "Web Search",
+  "provider": "daedalus",
+  "category": "Search",
+  "summary": "Web search returning ranked results with snippets. First call per agent per day free.",
+  "method": "POST",
+  "url": "https://agents.daedalusdevelopmentgroup.com/v1/web-search",
+  "networks": [
+   "eip155:8453"
+  ],
+  "priceUsd": "0.01"
+ },
+ {
+  "name": "Price Feed",
+  "provider": "daedalus",
+  "category": "Market",
+  "summary": "Crypto price feed. First call per agent per day free.",
+  "method": "POST",
+  "url": "https://agents.daedalusdevelopmentgroup.com/v1/price-feed",
+  "networks": [
+   "eip155:8453"
+  ],
+  "priceUsd": "0.01"
+ },
+ {
+  "name": "Site Audit",
+  "provider": "daedalus",
+  "category": "Audit",
+  "summary": "Website security audit: headers, TLS, exposed surfaces.",
+  "method": "POST",
+  "url": "https://agents.daedalusdevelopmentgroup.com/v1/site-audit",
+  "networks": [
+   "eip155:8453"
+  ],
+  "priceUsd": "0.02"
+ },
+ {
+  "name": "Security Audit Deep",
+  "provider": "daedalus",
+  "category": "Audit",
+  "summary": "Deep code/security audit with signed findings report.",
+  "method": "POST",
+  "url": "https://agents.daedalusdevelopmentgroup.com/v1/security-audit/deep",
+  "networks": [
+   "eip155:8453"
+  ],
+  "priceUsd": "0.05"
+ },
+ {
+  "name": "Fetch as Markdown",
+  "provider": "daedalus",
+  "category": "Content",
+  "summary": "Fetch a URL and return clean markdown. First call per agent per day free.",
+  "method": "POST",
+  "url": "https://agents.daedalusdevelopmentgroup.com/v1/fetch-as-markdown",
+  "networks": [
+   "eip155:8453"
+  ],
+  "priceUsd": "0.01"
+ },
+ {
+  "name": "UCP Checkout Verify",
+  "provider": "daedalus",
+  "category": "Verification",
+  "summary": "Verify a UCP checkout session's AP2 mandates signatures (JWS + hash-binding).",
+  "method": "POST",
+  "url": "https://agents.daedalusdevelopmentgroup.com/v1/ucp/checkout-verify",
+  "networks": [
+   "eip155:8453"
+  ],
+  "priceUsd": "0.01"
+ },
+ {
+  "name": "ERC-8004 Agent Screen",
+  "provider": "daedalus",
+  "category": "Verification",
+  "summary": "Screen an agent identity (ERC-8004) for risk signals before transacting.",
+  "method": "POST",
+  "url": "https://agents.daedalusdevelopmentgroup.com/v1/8004/screen",
+  "networks": [
+   "eip155:8453"
+  ],
+  "priceUsd": "0.01"
+ },
+ {
+  "name": "MPP Intent Verify",
+  "provider": "daedalus",
+  "category": "Verification",
+  "summary": "Structurally validate an MPP payment-intent (fields, addresses, expiry, nonce).",
+  "method": "POST",
+  "url": "https://agents.daedalusdevelopmentgroup.com/v1/mpp/intent-verify",
+  "networks": [
+   "eip155:8453"
+  ],
+  "priceUsd": "0.005"
  }
 ]
