@@ -2625,5 +2625,53 @@
    "eip155:8453"
   ],
   "priceUsd": 0.18
+ },
+ {
+  "name": "Exchange Health",
+  "provider": "agentrail",
+  "category": "Market Data",
+  "summary": "Live up/down status and latency for Binance, Kraken and Bybit, checked from Sydney. Use before routing an order.",
+  "method": "GET",
+  "url": "https://agentrail-backend-eta.vercel.app/api/x402/venue-health?venue=kraken",
+  "networks": [
+   "eip155:8453"
+  ],
+  "priceUsd": 0.001
+ },
+ {
+  "name": "Exchange Fee Estimate",
+  "provider": "agentrail",
+  "category": "Market Data",
+  "summary": "Fee for a trade of a given size on Binance, Kraken or Bybit at public base-tier rates.",
+  "method": "GET",
+  "url": "https://agentrail-backend-eta.vercel.app/api/x402/estimate-fees?venue=kraken&liquidity=taker&notional_usd=1000",
+  "networks": [
+   "eip155:8453"
+  ],
+  "priceUsd": 0.001
+ },
+ {
+  "name": "Exchange Uptime History",
+  "provider": "agentrail",
+  "category": "Market Data",
+  "summary": "Percent online, degraded and offline, average and p95 latency, and last outage for Binance, Kraken and Bybit over 1 to 90 days.",
+  "method": "GET",
+  "url": "https://agentrail-backend-eta.vercel.app/api/x402/venue-uptime?days=7",
+  "networks": [
+   "eip155:8453"
+  ],
+  "priceUsd": 0.002
+ },
+ {
+  "name": "x402 Market Search",
+  "provider": "agentrail",
+  "category": "Discovery",
+  "summary": "Ranked keyword search across the Coinbase and PayAI x402 catalogues, one result per provider, with a live check of each result.",
+  "method": "GET",
+  "url": "https://agentrail-backend-eta.vercel.app/api/x402/market-search?q=token+price",
+  "networks": [
+   "eip155:8453"
+  ],
+  "priceUsd": 0.002
  }
 ]
